@@ -19,6 +19,7 @@ public:
     const float a,b;
     Line(float a, float b);
     float f(float x);
+    double pizza;
 };
 
 class Point{
