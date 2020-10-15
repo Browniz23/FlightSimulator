@@ -20,6 +20,7 @@ public:
     Line(float a, float b);
     float f(float x);
     double pizza;
+    int corn;
 };
 
 class Point{
