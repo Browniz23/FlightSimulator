@@ -1,5 +1,5 @@
 //
-// Created by oziyo on 15/10/2020.
+// Created by oz on 15/10/2020.
 //
 
 #ifndef FLIGHTSIMULATOR_ANOMALY_DETECTION_UTIL_H
@@ -19,7 +19,8 @@ float pearson(float* x, float* y, int size);
 
 class Line{
 public:
-    const float a,b;
+    float a,b;
+    Line() : a(0), b(0){};
     Line(float a, float b) : a(a), b(b){};
     float f(float x){
         return a * x + b;
