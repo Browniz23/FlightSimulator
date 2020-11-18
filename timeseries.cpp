@@ -22,18 +22,30 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     file.close();
 }
 
+map<string, vector<float>> TimeSeries::getTable() const{
+    return m_features;
+}
 vector<float> TimeSeries::featureValues(string feature) {
     return m_features[feature];
 }
 
-vector<string> TimeSeries::getFeatures() {
+vector<string> TimeSeries::getFeatures() const{
     return m_orderedFeatures;
+}
+
+/**
+ * returns num of elements for each feature. all feature must have same amount.
+ * @return num of rows in table without feature.
+ */
+int TimeSeries::getColLength() const{
+    return colLength;
 }
 
 void TimeSeries::addRowData(float* rowData, int size) {
     for (int i = 0; i < size; i++) {
         m_features[m_orderedFeatures[i]].push_back(rowData[i]);
     }
+    colLength++;
 }
 
 void TimeSeries::addRowData(string line) {
@@ -44,6 +56,7 @@ void TimeSeries::addRowData(string line) {
         m_features[m_orderedFeatures[i]].push_back(stof(line));             //todo working??
         i++;
     }
+    colLength++;
 }
 
 //todo - need to get specific row?

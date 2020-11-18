@@ -70,11 +70,7 @@ float cov(float* x, float* y, int size) {
     yMean = avg(y, size);
     for (int i = 0; i < size; ++i) {
         newX[i] = x[i] - xMean;
-    }
-    for (int i = 0; i < size; ++i) {
         newY[i] = y[i] - yMean;
-    }
-    for (int i = 0; i < size; ++i) {
         newXY[i] = newX[i] * newY[i];
     }
     float cov = avg(newXY, size);
@@ -118,8 +114,6 @@ Line linear_reg(Point** points, int size) {
     float* y = new float[size];
     for (int i = 0; i < size; ++i) {
         x[i] = points[i]->x;
-    }
-    for (int i = 0; i < size; ++i) {
         y[i] = points[i]->y;
     }
     float xVar = var(x, size);          // todo is right????

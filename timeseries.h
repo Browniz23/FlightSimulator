@@ -15,6 +15,8 @@
 using namespace std;
 
 class TimeSeries{
+private:
+    int colLength = 0;
     int m_featuresNum = 0;
     vector<string> m_orderedFeatures;
     map<string, vector<float>> m_features;
@@ -23,11 +25,15 @@ public:
 
     vector<float> featureValues(string feature);
 
-    vector<string> getFeatures();
+    vector<string> getFeatures() const;
 
     void addRowData(float *rowData, int size);
 
     void addRowData(string line);
+
+    map<string, vector<float>> getTable() const;
+
+    int getColLength() const;
 };
 
 #endif //FLIGHTSIMULATOR_TIMESERIES_H
