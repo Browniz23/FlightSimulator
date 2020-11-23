@@ -102,6 +102,7 @@ int main() {
     bool anomlyDetected=false;
     int falseAlarms=0;
     for_each(r.begin(),r.end(),[&anomaly,&anomlyDetected,&falseAlarms](AnomalyReport ar){
+        cout << ar.description << ", " << ar.timeStep << endl;
         if(ar.description=="A-C" && ar.timeStep == anomaly)
             anomlyDetected=true;
         else

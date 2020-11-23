@@ -2,17 +2,10 @@
 // Created by oz on 15/10/2020.
 //
 
-#include <cmath>
+//#include <cmath>
+#include <math.h>
+//#include <cstdlib>
 #include "anomaly_detection_util.h"
-
-/**
- * absolute return abs of x.
- * @param x value
- * @return x' abs
- */
-float absolute(float x) {
-    return x < 0 ? -x : x;
-}
 
 /**
  * avg returns mean of x's floats.
@@ -110,7 +103,7 @@ float pearson(float* x, float* y, int size) {
 Line linear_reg(Point** points, int size) {
     // a - line slope, b - line meet with y axe.
     float a, b;
-    float* x = new float[size];
+    float* x = new float[size];                     // todo without dynamic evereywhere! float x[size] works?!?!?!?!
     float* y = new float[size];
     for (int i = 0; i < size; ++i) {
         x[i] = points[i]->x;
@@ -148,7 +141,7 @@ float dev(Point p,Point** points, int size) {
  */
 float dev(Point p,Line l) {
     float lineY = l.a * p.x + l.b;
-    return absolute(lineY - p.y);
+    return fabs(lineY - p.y);
 }
 
 // todo add oparators to point and line?

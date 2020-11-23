@@ -17,14 +17,14 @@ struct correlatedFeatures{
     float corrlation;
     Line lin_reg;
     float threshold;
-
+/*
     bool operator<(const correlatedFeatures& cor) const {
         return corrlation < cor.corrlation;
     }
 
     bool operator>(const correlatedFeatures& cor) const {
         return corrlation > cor.corrlation;
-    }
+    }*/
 };
 
 
