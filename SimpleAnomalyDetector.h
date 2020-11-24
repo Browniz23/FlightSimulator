@@ -1,6 +1,4 @@
-//
-// Created by oziyo on 09/11/2020.
-//
+// Oz Browner 316482355
 
 #ifndef FLIGHTSIMULATOR_SIMPLEANOMALYDETECTOR_H
 #define FLIGHTSIMULATOR_SIMPLEANOMALYDETECTOR_H
@@ -17,14 +15,6 @@ struct correlatedFeatures{
     float corrlation;
     Line lin_reg;
     float threshold;
-/*
-    bool operator<(const correlatedFeatures& cor) const {
-        return corrlation < cor.corrlation;
-    }
-
-    bool operator>(const correlatedFeatures& cor) const {
-        return corrlation > cor.corrlation;
-    }*/
 };
 
 
@@ -44,9 +34,3 @@ public:
 };
 
 #endif //FLIGHTSIMULATOR_SIMPLEANOMALYDETECTOR_H
-
-/*
-#ifndef SIMPLEANOMALYDETECTOR_H_
-#define SIMPLEANOMALYDETECTOR_H_
-
-#endif /* SIMPLEANOMALYDETECTOR_H_ */

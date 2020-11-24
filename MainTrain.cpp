@@ -50,7 +50,7 @@ void checkCorrelationTrain(correlatedFeatures c,string f1, string f2, float a, f
         if(c.feature2!=f2)
             cout<<"wrong correlated feature of "<<f1<<" (-20)"<<endl;
         else{
-            cout << "3: "<< c.lin_reg.a << ", " << c.lin_reg.b << ", " << c.corrlation << endl;
+            //cout << "3: "<< c.lin_reg.a << ", " << c.lin_reg.b << ", " << c.corrlation << endl;
             if(c.corrlation<0.99)
                 cout<<f1<<"-"<<f2<<" wrong correlation detected (-5)"<<endl;
             if(c.lin_reg.a<a-0.5f || c.lin_reg.a>a+0.5f)
@@ -68,7 +68,7 @@ int main() {
     srand(time(NULL));
     float a1 = 1 + rand() % 10, b1 = -50 + rand() % 100;
     float a2 = 1 + rand() % 20, b2 = -50 + rand() % 100;
-    cout << "1: " << a1 << ", " << b1 << endl;
+//    cout << "1: " << a1 << ", " << b1 << endl;
 
     // test the learned model: (40 points)
     // expected correlations:
@@ -92,7 +92,7 @@ int main() {
     // test the anomaly detector: (60 points)
     // one simply anomaly is injected to the data
     int anomaly=5+rand()%90; // one anomaly injected in a random time step
-    cout << "---their " << anomaly << endl;
+//    cout << "---their " << anomaly << endl;
     generateTestCSV(a1,b1,a2,b2,anomaly);
     TimeSeries ts2("testFile1.csv");
     vector<AnomalyReport> r = ad.detect(ts2);

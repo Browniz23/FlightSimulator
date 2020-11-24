@@ -1,6 +1,4 @@
-//
-// Created by oziyo on 09/11/2020.
-//
+// Oz Browner 316482355
 
 #ifndef FLIGHTSIMULATOR_TIMESERIES_H
 #define FLIGHTSIMULATOR_TIMESERIES_H
@@ -57,10 +55,3 @@ public:
 };
 
 #endif //FLIGHTSIMULATOR_TIMESERIES_H
-
-
-/*
-#ifndef TIMESERIES_H_
-#define TIMESERIES_H_
-
-#endif /* TIMESERIES_H_ */

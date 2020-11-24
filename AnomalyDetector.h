@@ -1,6 +1,4 @@
-//
-// Created by oziyo on 09/11/2020.
-//
+// Oz Browner 316482355
 
 #ifndef FLIGHTSIMULATOR_ANOMALYDETECTOR_H
 #define FLIGHTSIMULATOR_ANOMALYDETECTOR_H
@@ -27,11 +25,3 @@ public:
 };
 
 #endif //FLIGHTSIMULATOR_ANOMALYDETECTOR_H
-
-
-
-/*
-#ifndef ANOMALYDETECTOR_H_
-#define ANOMALYDETECTOR_H_
-
-#endif /* ANOMALYDETECTOR_H_ */

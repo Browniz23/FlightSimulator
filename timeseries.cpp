@@ -1,21 +1,19 @@
-//
-// Created by oziyo on 09/11/2020.
-//
+// Oz Browner 316482355
 
 #include "timeseries.h"
 
 TimeSeries::TimeSeries(const char *CSVfileName) {
     ifstream file;
-    file.open(CSVfileName);                             //todo check if open
+    file.open(CSVfileName);
     string line;
     getline(file, line);
     stringstream ss(line);
-    // first line - strings vector
+    // first line - strings vector. each feature separately.
     while (getline(ss, line, ',')) {
         m_orderedFeatures.push_back(line);
         m_featuresNum++;
     }
-    // rest lines seperately
+    // rest lines separately.
     while(getline(file, line)) {
         addRowData(line);
     }
@@ -53,14 +51,8 @@ void TimeSeries::addRowData(string line) {
     int i = 0;
     // each line goes into different float vector (each vector is part of table).
     while (getline(ss, line, ',')) {
-        m_features[m_orderedFeatures[i]].push_back(stof(line));             //todo working??
+        m_features[m_orderedFeatures[i]].push_back(stof(line));
         i++;
     }
     colLength++;
 }
-
-//todo - need to get specific row?
-// todo - get i val in feature j
-// todo - get more info from csv file - need to learn appeand?
-// todo - whats up with const \ const char \ string
-// todo maybe need to cancel fea amount

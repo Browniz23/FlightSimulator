@@ -1,10 +1,6 @@
-//
-// Created by oz on 15/10/2020.
-//
+// Oz Browner 316482355
 
-//#include <cmath>
 #include <math.h>
-//#include <cstdlib>
 #include "anomaly_detection_util.h"
 
 /**
@@ -86,11 +82,6 @@ float pearson(float* x, float* y, int size) {
     sdX = sqrt(var(x, size));
     sdY = sqrt(var(y, size));
     cova = cov(x, y, size);
-    if (sdX * sdY == 0) {
-        // todo: is right?
-        return 0;
-       // return cova > 0 ? 1 : -1;
-    }
     return cova / (sdX * sdY);
 }
 
@@ -103,18 +94,14 @@ float pearson(float* x, float* y, int size) {
 Line linear_reg(Point** points, int size) {
     // a - line slope, b - line meet with y axe.
     float a, b;
-    float* x = new float[size];                     // todo without dynamic evereywhere! float x[size] works?!?!?!?!
+    float* x = new float[size];
     float* y = new float[size];
     for (int i = 0; i < size; ++i) {
         x[i] = points[i]->x;
         y[i] = points[i]->y;
     }
-    float xVar = var(x, size);          // todo is right????
-    if (xVar == 0) {
-        a = 0;
-    } else {
-        a = cov(x, y, size) / xVar;
-    }
+    float xVar = var(x, size);
+    a = cov(x, y, size) / xVar;
     b = avg(y, size) - a * avg(x, size);
     delete[] x;
     delete[] y;
@@ -144,6 +131,3 @@ float dev(Point p,Line l) {
     return fabs(lineY - p.y);
 }
 
-// todo add oparators to point and line?
-// todo what should do when divide by 0 in pearson and reg
-// todo oerator delete?
